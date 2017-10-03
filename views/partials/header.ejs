@@ -1,0 +1,57 @@
+<!-- CONTENT_NAV_BEGIN -->
+
+<div class="ibm-sitenav-menu-container">
+<div class="ibm-sitenav-menu-name"><span class="ibm-h3">Bluemix Architecture Diagramming Template</span></div>
+<div class="ibm-sitenav-menu-list">
+
+<ul role="menubar" class="ibm-h4" style="font-size: 17px;">
+
+  <% if (!user) { %>
+
+  <li role="presentation">
+    <a role="menuitem" href="/content">Home</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="/upload">Add Your Diagrams</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="#">About Us</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="#">Send Us Feedback</a>
+  </li>
+  <li >
+    <a role="tab" href="#" onclick="IBMCore.common.widget.overlay.show('githublogin'); return false;">Login</a>
+  </li>
+
+  <% } else { %>
+
+  <li role="presentation">
+    <a role="menuitem" href="/content">Home</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="/upload">Add Your Diagrams</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="#">About Us</a>
+  </li>
+  <li role="presentation">
+    <a role="menuitem" href="#">Send Us Feedback</a>
+  </li>
+
+  <li role="presentation" class="ibm-haschildlist ibm-highlight">
+    <span role="menuitem">Profile</span>
+    <ul role="menu">
+      <li role="presentation"><a role="menuitem" href="/account">Account</a></li>
+      <li role="presentation"><a role="menuitem" href="/logout">Logout</a></li>
+    </ul>
+  </li>
+
+  <% } %>
+
+</ul>
+
+</div>
+</div>
+
+<!-- CONTENT_NAV_END -->

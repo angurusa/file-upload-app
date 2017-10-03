@@ -1,0 +1,39 @@
+<% include partials/leadspacetop %>
+
+<main role="main" aria-labelledby="ibm-pagetitle-h1">
+  <div id="ibm-pcon">
+    <div id="ibm-content">
+      <div id="ibm-content-body">
+
+        <div class="ibm-common-overlay ibm-background-cool-white-core" data-widget="overlay" id="githublogin">
+            <div class="ibm-center">
+              <p>Login Options:</p>
+              <p><a class="ibm-btn-sec" href="/auth/github">Login with <span class="ibm-bold">GitHub</span></a></p>
+            </div>
+        </div>
+
+        <div id="ibm-content-main">
+                <div class="ibm-columns">
+                      <div class="ibm-col-1-1">
+
+                      <!-- Body starts -->
+
+                        <p>ID: <%= user.id %></p>
+                        <p>Username: <%= user.username %></p>
+                        <p>Name: <%= user.displayName %></p>
+                        <p>Email: <%= user.emails[0].value %></p>
+
+                      <!-- Body ends -->
+
+                      </div>
+                      <br>
+                </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<% include partials/leadspacebottom %>

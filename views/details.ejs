@@ -1,0 +1,123 @@
+<!-- LEADSPACE_BEGIN -->
+
+
+<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+  <div id="ibm-leadspace-head" class="ibm-alternate" style="background-color:#4178BE; height:100pt;">
+    <div id="ibm-leadspace-body">
+      <div class="ibm-columns ibm-alternate-background ibm-vertical-center">
+        <div class="ibm-col-1-1 ibm-">
+          <h1 class="ibm-h1">IBM Bluemix Diagrams</h1>
+        </div>
+      </div>
+    </div>
+    </div>
+
+</header>
+
+<!-- LEADSPACE_END -->
+
+<main role="main" aria-labelledby="ibm-pagetitle-h1">
+  <div id="ibm-pcon">
+    <div id="ibm-content">
+      <div id="ibm-content-body">
+
+        <div class="ibm-common-overlay ibm-background-cool-white-core" data-widget="overlay" id="githublogin">
+            <div class="ibm-center">
+              <p>Login Options:</p>
+              <p><a class="ibm-btn-sec" href="/auth/github">Login with <span class="ibm-bold">GitHub</span></a></p>
+            </div>
+        </div>
+
+        <div id="ibm-content-main">
+
+          <% if (!details) { %>
+            <h2>Page Not Found</h2>
+            <%= details %>
+          <% } else { %>
+            <div class="ibm-columns ibm-padding-bottom-r2">
+
+                  <div class="ibm-col-12-4">
+                    <img alt="picture" src="<%= details.image %>" class="ibm-resize" />
+                    <div class="ibm-columns ibm-fluid ibm-flex ibm-flex--wrap ibm-padding-top-r1">
+                        <p class="ibm-center-block">
+                            <span class="ibm-icon-nolink ibm-like-link ibm-bold"><%= details.likes %></span>
+                            <span class="ibm-textcolor-gray-30">|</span><br class="ibm-br-large">
+                            <span class="ibm-icon-nolink ibm-download-link ibm-bold"><%= details.downloads %></span>
+                            <span class="ibm-textcolor-gray-30">|</span><br class="ibm-br-large">
+                            <span class="ibm-icon-nolink ibm-forum-link ibm-bold"><%= details.comments %></span>
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="ibm-col-12-8">
+                    <h3 class="ibm-h3"><%= details.title %></h3>
+                    <p><%= details.description %></p>
+                    <p>
+                        <span class="ibm-bold">Author: </span><%= details.author %><br>
+                        <span class="ibm-bold">Modified: </span><%= details.modified %><br>
+                        <span class="ibm-bold">Tags: </span>
+                        <% if(details.tags.length != 'undefined' && details.tags.length != 0) { %>
+                          <% for(var n=0; n < details.tags.length; n++ ) { %>
+                              <a href="#" class="ibm-ind-link"><%= details.tags[n] %></a>
+                              <% if(n!=(details.tags.length-1)){ %>
+                                ,
+                              <% } %>
+                          <% } %>
+                        <% } %>
+                    </p>
+                    <p class="ibm-button-link ibm-ind-link ibm-padding-top-r1">
+                        <a href="#" class="ibm-download-link ibm-btn-pri ibm-btn-blue-50">Download All</a>
+                    </p>
+                    <p class="ibm-ind-link">
+                        <a href="#" class="ibm-download-link">Visio_Bluemix_Application_Architecture_Diagramming_v3.0_6JAN2015.zip</a>
+                        <a href="#" class="ibm-download-link">Bluemix_Application_Architecture_Diagramming_v3.0_6JAN2016.pptx</a>
+                    </p>
+                  </div>
+
+            </div>
+
+            <div class="ibm-rule ibm-gray-70 ibm-padding-top-r1"><hr></div>
+
+            <div class="ibm-columns">
+                <div class="ibm-col-12-8 ibm-center-block">
+
+                  <div class="ibm-columns ibm-left">
+                    <div class="ibm-col-12-6">
+                        <h3 class="ibm-h3">27 Reviews</h3>
+                    </div>
+                    <div class="ibm-col-12-6 ibm-right">
+                        <h4 class="ibm-h4"><a href="#">Write a Review</a></h4>
+                    </div>
+                  </div>
+                  <% if(details.reviews.length!=0 && details.reviews.length!='undefined') { %>
+                    <% for(var q=0; q < details.reviews.length; q++) { %>
+                        <div class="ibm-columns">
+                          <div class="ibm-col-12-3 ibm-center">
+                            <img class="ibm-downsize ibm-circle" width="90pt" height="90pt" src="<%= details.reviews[q].reviewerDisplayPicture %>" alt="display picture"/>
+                            <p>
+                              <span class="ibm-bold"><%= details.reviews[q].reviewerName %></span><br>
+                              <span class="ibm-small"><%= details.reviews[q].reviewDate %></span>
+                            </p>
+                          </div>
+                          <div class="ibm-col-12-9">
+                            <p class="ibm-h4"><%= details.reviews[q].reviewTitle %></p>
+                            <p><%= details.reviews[q].reviewDescription %></p>
+                          </div>
+                        </div>
+                    <% } %>
+                  <% } %>
+
+                </div>
+            </div>
+
+            <% } %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<% include partials/leadspacebottom %>
